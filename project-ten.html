@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <title>Logical Questions</title>
+  </head>
+  <body>
+    <div class="question">
+      Write a program that creates a Set of unique words from an array of
+      sentences and displays the result on the web page.<br />
+      <br />Given Input:The quick brown fox", "jumps over the lazy dog", "The
+      quick brown fox <br />Expected output:The, quick, brown, fox, jumps, over,
+      the, lazy, dog
+    </div>
+    <form id="formBtn">
+      <input
+        type="text"
+        placeholder="Enter The Input Value"
+        class="input"
+        id="input"
+      />
+      <input type="submit" value="Output" class="submit" />
+    </form>
+    <div class="output">
+      <h2>Output:</h2>
+      <span id="result"></span>
+    </div>
+
+    <script>
+      const inputEl = document.getElementById('input');
+      const submitEl = document.getElementById('formBtn');
+      const resultEL = document.getElementById('result');
+      let result = '';
+
+      submitEl.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const input = inputEl.value;
+        if (input) {
+          findUniqueValue(input);
+        } else alert('Input Field Is Mandatory');
+        resultEL.innerText = result;
+        inputEl.value = '';
+      });
+
+      function findUniqueValue(input) {
+        const replace = input.replace(/['"]+/g, '');
+        const removeComma = replace.replace(/,/g, '');
+        const splitInput = removeComma.split(' ');
+
+        let obj = {};
+        splitInput.map((item) => {
+          obj[item] = (obj[item] || 0) + 1;
+        });
+
+        let value = '';
+        for (let key in obj) {
+          value += ' ' + key;
+        }
+
+        result = value;
+      }
+    </script>
+  </body>
+</html>

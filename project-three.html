@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <title>Logical Questions</title>
+  </head>
+  <body>
+    <div class="question">
+      Write a program to calculate the total sum of a particular column in the
+      table and display it on the web page.<br />
+      <br />Given Input: <br />Item Price Quantity <br />Item 1 10 2 <br />Item
+      2 20 3 <br />Item 3 5 4 <br />
+
+      <br />Expected Output: <br />Item Price Quantity <br />Item 1 10 2
+      <br />Item 2 20 3 <br />Item 3 5 4 <br />Total: 35.00
+    </div>
+    <form id="formBtn">
+      <input
+        type="text"
+        placeholder="Enter The Item 1 Quantity"
+        class="input"
+        id="input1"
+      />
+      <input
+        type="text"
+        placeholder="Enter The Item 2 Quantity"
+        class="input"
+        id="input2"
+      />
+      <input
+        type="text"
+        placeholder="Enter The Item 3 Quantity"
+        class="input"
+        id="input3"
+      />
+      <input type="submit" value="Output" class="submit" />
+    </form>
+    <div class="output">
+      <h2>Output:</h2>
+      <span id="result"></span>
+    </div>
+
+    <script>
+      const input1El = document.getElementById('input1');
+      const input2El = document.getElementById('input2');
+      const input3El = document.getElementById('input3');
+      const submitEl = document.getElementById('formBtn');
+      const resultEL = document.getElementById('result');
+
+      let result = null;
+      submitEl.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const input1 = input1El.value;
+        const input2 = input2El.value;
+        const input3 = input3El.value;
+        if ((input1, input2, input3)) {
+          findValue(input1, input2, input3);
+        } else alert('Input Field Is Mandatory');
+        resultEL.innerText = `${result.toFixed(0)}`;
+      });
+
+      function findValue(input1, input2, input3) {
+        result = input1 * 5 + input2 * 6.6 + input3 * 1.25;
+      }
+    </script>
+  </body>
+</html>

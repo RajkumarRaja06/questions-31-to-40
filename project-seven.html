@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <title>Logical Questions</title>
+  </head>
+  <body>
+    <div class="question">
+      Write a program that creates an object representing a movie with
+      properties like title, director, and rating. Then, display the object on
+      the web page.
+    </div>
+    <form id="formBtn">
+      <input
+        type="text"
+        placeholder="Enter The Movie Title"
+        class="input"
+        id="title"
+      />
+      <input
+        type="text"
+        placeholder="Enter The Movie Director"
+        class="input"
+        id="director"
+      />
+      <input
+        type="number"
+        placeholder="Enter The Movie Rating"
+        class="input"
+        id="rating"
+      />
+      <input type="submit" value="Output" class="submit" />
+    </form>
+    <div class="output">
+      <h2>Output:</h2>
+      <div>
+        <ul id="result">
+          <li><span>Title</span><span>Director</span><span>Rating</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      const titleEl = document.getElementById('title');
+      const directorEl = document.getElementById('director');
+      const ratingEl = document.getElementById('rating');
+
+      const submitEl = document.getElementById('formBtn');
+      const resultEL = document.getElementById('result');
+
+      submitEl.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const title = titleEl.value;
+        const director = directorEl.value;
+        const rating = ratingEl.value;
+        if ((title, director, rating)) {
+          addObject(title, director, rating);
+        } else alert('Input Field Is Mandatory');
+        titleEl.value = '';
+        directorEl.value = '';
+        ratingEl.value = '';
+      });
+
+      function addObject(title, director, rating) {
+        const liEl = document.createElement('li');
+        liEl.innerHTML = `<span>${title} </span><span>${director} </span><span>${rating}</span>`;
+        resultEL.appendChild(liEl);
+      }
+    </script>
+  </body>
+</html>

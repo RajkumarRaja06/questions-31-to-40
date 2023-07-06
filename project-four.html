@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <title>Logical Questions</title>
+  </head>
+  <body>
+    <div class="question">
+      Write a program to add a new row to the table when a user fills out a form
+      and clicks on the submit button<br />
+      <br />Given input: <br />Name Age City <br />John 25 New York <br />Emily
+      32 London<br />
+
+      <br />Given input: <br />Name Age City <br />John 25 New York <br />Emily
+      32 London<br />Ram 24 Chennai <br />
+    </div>
+    <form id="formBtn">
+      <input
+        type="text"
+        placeholder="Enter The Your Name"
+        class="input"
+        id="name"
+      />
+      <input type="text" placeholder="Enter Your Age" class="input" id="age" />
+      <input
+        type="text"
+        placeholder="Enter Your City"
+        class="input"
+        id="city"
+      />
+      <input type="submit" value="Output" class="submit" />
+    </form>
+    <div class="output">
+      <h2>Output:</h2>
+      <div>
+        <ul>
+          <li><span>Name</span><span>Age</span><span>City</span></li>
+          <li><span>John </span><span>25 </span><span>New York</span></li>
+          <li><span>Emily </span><span>32 </span><span>London</span></li>
+        </ul>
+        <ul id="result"></ul>
+      </div>
+    </div>
+
+    <script>
+      const nameEl = document.getElementById('name');
+      const ageEl = document.getElementById('age');
+      const cityEl = document.getElementById('city');
+
+      const submitEl = document.getElementById('formBtn');
+      const resultEL = document.getElementById('result');
+
+      submitEl.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = nameEl.value;
+        const age = ageEl.value;
+        const city = cityEl.value;
+
+        if ((name, age, city)) {
+          addRow(name, age, city);
+        } else alert('Input Field Is Mandatory');
+
+        nameEl.value = '';
+        ageEl.value = '';
+        cityEl.value = '';
+      });
+
+      const addRow = (name, age, city) => {
+        const liEl = document.createElement('li');
+        liEl.innerHTML = `<span>${name} </span><span>${age} </span><span>${city}</span>`;
+        resultEL.appendChild(liEl);
+      };
+    </script>
+  </body>
+</html>

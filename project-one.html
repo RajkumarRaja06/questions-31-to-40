@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <title>Logical Questions</title>
+  </head>
+  <body>
+    <div class="question">
+      You are given an array of numbers. Write a program that finds the
+      difference between the largest and smallest numbers in the array and
+      displays the result on a web page.<br />
+      <br />Given input:2, 5, 1, 8, 3, 9. <br />Expected output:8
+    </div>
+    <form id="formBtn">
+      <input
+        type="text"
+        placeholder="Enter The Input Value"
+        class="input"
+        id="input"
+      />
+      <input type="submit" value="Output" class="submit" />
+    </form>
+    <div class="output">
+      <h2>Output:</h2>
+      <span id="result"></span>
+    </div>
+
+    <script>
+      const inputEl = document.getElementById('input');
+      const submitEl = document.getElementById('formBtn');
+      const resultEL = document.getElementById('result');
+
+      let result = null;
+
+      submitEl.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const input = inputEl.value;
+        if (input) {
+          findDifference(input);
+        } else alert('Input Field Is Mandatory');
+        resultEL.innerText = `${result}`;
+        inputEl.value = '';
+      });
+
+      const findDifference = ([...input]) => {
+        let minValue = input[0];
+        let maxValue = input[1];
+
+        input.forEach((item) => {
+          if (maxValue < item) {
+            maxValue = item;
+          } else if (minValue > item) {
+            minValue = minValue;
+          }
+        });
+
+        result = maxValue - minValue;
+      };
+    </script>
+  </body>
+</html>

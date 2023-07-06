@@ -1,0 +1,74 @@
+31.	You are given an array of numbers. Write a program that finds the difference between the largest and smallest numbers in the array and displays the result on a web page.
+
+Given input:2, 5, 1, 8, 3, 9.
+Expected output:8
+
+32.	You are given a string.Write a program that checks if a given string is a valid email address using logical operators and displays the result in web page.
+
+Given input:xxxx@gmail.com
+Expected output:Valid email
+
+33.	Write a program to calculate the total sum of a particular column in the table and display it on the web page.
+
+Given Input:
+Item	Price	Quantity
+Item 1	10	2
+Item 2	20	3
+Item 3	5	4
+
+Expected Output:
+
+Item	Price	Quantity
+Item 1	10	2
+Item 2	20	3
+Item 3	5	4
+Total: 35.00
+
+
+34.	Write a program to add a new row to the table when a user fills out a form and clicks on the submit button.
+
+Given input:
+Name	Age	City
+John	25	New York
+Emily	32	London
+
+Expected Output:
+Name	Age	City
+John	25	New York
+Emily	32	London
+Ram	24	Chennai
+
+
+35.	Write a program to show/hide certain columns in the table based on a user selection and display result on web page.
+
+36.	You are given a string. Write a program that replaces all occurrences of a particular character with another character and displays the result on a web page.
+
+Given input:Skill sufuri,u,a
+Expected Ouput:Skill safari
+
+37.	Write a program that creates an object representing a movie with properties like title, director, and rating. Then, display the object on the web page.
+
+38.	Write a program that uses a Map to store the count of each character in a given string and displays the result on the web page.
+
+Given input:Skill safari
+Expected output:
+S: 1
+k: 1
+i: 2
+l: 2
+: 1
+s: 1
+a: 2
+f: 1
+r: 1
+
+39.	Write a program that creates a Set of unique characters from a given string and displays the result on the web page.
+
+Given input:Skill safari
+Expected Output:Skil safr
+
+40.	Write a program that creates a Set of unique words from an array of sentences and displays the result on the web page.
+
+Given Input:The quick brown fox", "jumps over the lazy dog", "The quick brown fox
+Expected output:The, quick, brown, fox, jumps, over, the, lazy, dog
+

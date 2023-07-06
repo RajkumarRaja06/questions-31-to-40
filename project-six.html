@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <title>Logical Questions</title>
+  </head>
+  <body>
+    <div class="question">
+      You are given a string. Write a program that replaces all occurrences of a
+      particular character with another character and displays the result on a
+      web page.<br />
+      <br />Given input:Skill sufuri,u,a<br />Expected Ouput:Skill safari
+    </div>
+    <form id="formBtn">
+      <input
+        type="text"
+        placeholder="Type Skill sufuri ,u ,a"
+        class="input"
+        id="input"
+      />
+      <input type="submit" value="Output" class="submit" />
+    </form>
+    <div class="output">
+      <h2>Output:</h2>
+      <span id="result"></span>
+    </div>
+
+    <script>
+      const inputEl = document.getElementById('input');
+      const submitEl = document.getElementById('formBtn');
+      const resultEL = document.getElementById('result');
+      let result = null;
+      submitEl.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const input = inputEl.value;
+        if (input) {
+          correctString(input);
+        } else alert('Input Field Is Mandatory');
+        resultEL.innerText = result;
+        inputEl.value = '';
+      });
+
+      function correctString(input) {
+        const splitInput = input.split(',');
+        [word, secondWord, replaceWord] = splitInput;
+        result = word.replaceAll(secondWord, replaceWord);
+      }
+    </script>
+  </body>
+</html>

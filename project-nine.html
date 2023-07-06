@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <title>Logical Questions</title>
+  </head>
+  <body>
+    <div class="question">
+      Write a program that creates a Set of unique characters from a given
+      string and displays the result on the web page.<br />
+      <br />Given input: Skill safari <br />Expected Output: Skil safr
+    </div>
+    <form id="formBtn">
+      <input
+        type="text"
+        placeholder="Enter The Input Value"
+        class="input"
+        id="input"
+      />
+      <input type="submit" value="Output" class="submit" />
+    </form>
+    <div class="output">
+      <h2>Output:</h2>
+      <span id="result"></span>
+    </div>
+
+    <script>
+      const inputEl = document.getElementById('input');
+      const submitEl = document.getElementById('formBtn');
+      const resultEL = document.getElementById('result');
+      let result = null;
+
+      submitEl.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const input = inputEl.value;
+        if (input) {
+          removeUniqueValue(input);
+        } else alert('Input Field Is Mandatory');
+        resultEL.innerText = result;
+        inputEl.value = '';
+      });
+
+      function removeUniqueValue(input) {
+        const splitInput = [...input];
+        let obj = {};
+        splitInput.map((item) => {
+          obj[item] = (obj[item] || 0) + 0;
+        });
+
+        let value = [];
+        for (let key in obj) {
+          value.push(key);
+        }
+        result = value.join('');
+      }
+    </script>
+  </body>
+</html>

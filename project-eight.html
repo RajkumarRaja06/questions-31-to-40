@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <title>Logical Questions</title>
+  </head>
+  <body>
+    <div class="question">
+      Write a program that uses a Map to store the count of each character in a
+      given string and displays the result on the web page.<br />
+      <br />Given input: Skill safari <br />Expected output: S: 1 k: 1 i: 2 l: 2
+      : 1 s: 1 a: 2 f: 1 r: 1
+    </div>
+    <form id="formBtn">
+      <input
+        type="text"
+        placeholder="Enter The Input Value"
+        class="input"
+        id="input"
+      />
+      <input type="submit" value="Output" class="submit" />
+    </form>
+    <div class="output">
+      <h2>Output:</h2>
+      <div>
+        <ul id="result"></ul>
+      </div>
+    </div>
+
+    <script>
+      const inputEl = document.getElementById('input');
+      const submitEl = document.getElementById('formBtn');
+      const resultEL = document.getElementById('result');
+
+      submitEl.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const input = inputEl.value;
+        if (input) {
+          findCount(input);
+        } else alert('Input Field Is Mandatory');
+        inputEl.value = '';
+      });
+
+      function findCount(input) {
+        const splitInput = [...input];
+        let obj = {};
+        splitInput.map((item) => {
+          obj[item] = (obj[item] || 0) + 1;
+        });
+
+        for (let key in obj) {
+          const liEl = document.createElement('li');
+          liEl.innerHTML = `<span>${key} :<span/><span>${obj[key]}<span/>`;
+          resultEL.appendChild(liEl);
+        }
+      }
+    </script>
+  </body>
+</html>
